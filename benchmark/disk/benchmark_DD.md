@@ -1,26 +1,10 @@
 > # Disk I/Ops Tests
-> ## DD
+> ### DD
 ## clear cache
 ```bash 
 echo 3 | sudo tee /proc/sys/vm/drop_caches
-time dd if=/path/to/bigfile of=/dev/null bs=8k
 ```
 > ## sequential read 
-> ### lateancy
-> 1. my_laptop:
-> ```bash
-> - command $
-> ```
-> ```bash
-> - resaults:
-> ```
-> 2. server LFF 232:
-> ```bash
-> - command $
-> ```
-> ```bash
-> - resaults:
-> ```
 > ### throughput
 > 1. my_laptop:
 > ```bash
@@ -80,21 +64,6 @@ time dd if=/path/to/bigfile of=/dev/null bs=8k
 > - resaults: 1073741824 bytes (1.1 GB, 1.0 GiB) copied, 2.95587 s, 363 MB/s
 > ```
 > ## random read 
-> ### lateancy
-> 1. my_laptop:
-> ```bash
-> - command $
-> ```
-> ```bash
-> - resaults:
-> ```
-> 2. server LFF 232:
-> ```bash
-> - command $
-> ```
-> ```bash
-> - resaults:
-> ```
 > ### throughput
 > 1. my_laptop:
 > ```bash
