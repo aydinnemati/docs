@@ -3,6 +3,7 @@
 ## testing
 
 > 1. my_laptop:
+> - cpu: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz - 4 cores & 8 threads
 > ```bash
 > - $ sysbench --test=cpu --cpu-max-prime=20000 run
 > ```
