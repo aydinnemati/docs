@@ -52,7 +52,7 @@
 >    execution time (avg/stddev):   10.0002/0.00
 > ```
 > 3. server SFF 235:
-> - cpu: Intel(R) Xeon(R) CPU E5-2667 v2 @ 3.30GHz - 10 cores & 20 threads
+> - cpu: Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz - 10 cores & 20 threads
 > ```bash
 > - $ sysbench --test=cpu --cpu-max-prime=20000 run
 > ```
