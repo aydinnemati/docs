@@ -13,7 +13,7 @@ $ udisksctl  status
 $ sudo apt-get install sysbench
 ```
 ## testing
-1. my_laptop:
+> 1. my_laptop:
 > ```bash
 > - $ sysbench fileio --file-total-size=15G --file-test-mode=rndrw --time=300 --max-requests=0 prepare
 > - $ sysbench fileio --file-total-size=15G --file-test-mode=rndrw --time=300 --max-requests=0 run
