@@ -15,7 +15,7 @@
 # server 223 LFF:
 > ## raid 0:
 - disk: SATA 3 TB 7200rpm hp model MB3000GBKAC
-### directory to disk
+### path
 > - /data-1-r0
 - ### command:
 ```bash
@@ -31,7 +31,7 @@ resault: Run status group 0 (all jobs):
 # server 222 SFF:
 > ## raid 5:
 > - disk: SAS 900 GB hp model EG0900FCSPN 
-### directory to disk
+### path
 > - /data-04-r5
 - ### command:
 ```bash
@@ -44,9 +44,11 @@ resault: Run status group 0 (all jobs):
 ```
 > ## raid 0:
 > - disk: SAS 900 GB hp model EG0900FCSPN 
-### directory to disk
+### path
 > - /data-01-r0
 - ### command:
+### path
+> - /data
 ```bash
 $ sudo fio --ioengine=posixaio --bs=4k --numjobs=1 --size=4g --iodepth=1 --runtime=60 --time_based --name=random-write --rw=rw --direct=1
 ```
