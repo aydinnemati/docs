@@ -184,7 +184,8 @@ $ sudo ceph osd pool set <pool-name> size <value>
 $ sudo ceph osd pool set <pool-name> min_size <value>
 ```
 > # **get a health check and it should be OK**
->congratulations!!! you have a ceph cluster with:
+> congratulations!!! 
+> you have a ceph cluster with:
 > - 2 monitors
 > - 2 managers
 > - a rados gateway
