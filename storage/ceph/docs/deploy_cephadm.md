@@ -64,7 +64,7 @@ $ sudo ceph orch host add rgw1 *<ip>*
 ```bash
 $ sudo apt install ceph-common
 ```
-## add monitor node
+# add monitor node
 > 10. add mon2
 ```bash
 $ sudo ceph orch apply mon *<number-of-monitors>* # default to 5
@@ -79,7 +79,7 @@ $ sudo ceph orch host label add *<hostname>* mon
 ```bash
 $ sudo ceph orch host add addr *<mon1-ip>*
 ```
-## adding OSDs
+# adding OSDs
 > 13. first you should wait to ceph see disks that has no partitions and not mounted because we are using bluestore
 it could take a few minutes be patient
 then do this to see available disks to deploy osd on
@@ -162,5 +162,35 @@ $ sudo ceph orch redeploy *<service>*
 - when creating pools on 2 hosts should set default pool size to 2
 > ## to see monitoring dashboard 
 - https://*<< mon1-ip >>*:3000
+> ## osd s info
+```bash
+$ sudo ceph osd df
+```
+# adding mds node
+```bash
+$ sudo ceph orch apply mds *<fs-name>* --placement="*<num-daemons>* [*<host1>* ...]"
+$ sudo ceph orch apply mds **some name like test-fss** --placement=2 mon2
+```
+# adding rgw node
+```bash
+$ sudo ceph orch apply rgw *<realm-name>* *<zone-name>* --placement="*<num-daemons>* [*<host1>* ...]"
+$ sudo ceph orch apply rgw my-rgw-test zone-test --placement="2 rgw1"
+```
+> ## pool size
+- default replication is on hosts
+- when create pools should set size on 2 or add another osd host
+```bash
+$ sudo ceph osd pool set <pool-name> size <value>
+$ sudo ceph osd pool set <pool-name> min_size <value>
+```
+> # **get a health check and it should be OK**
+>congratulations!!! you have a ceph cluster with:
+> - 2 monitors
+> - 2 managers
+> - a rados gateway
+> - a meta data server
+> - 4 osds
+> - monitoring with prometheus and node-exporter with grafana dashboard
+
 
 
