@@ -206,5 +206,3 @@ $ sudo ceph osd pool set <pool-name> min_size <value>
 ```bash
 $ sudo usermod -aG docker $USER
 ```
-
-# **~~~ (( how use ceph ?! )) ~~~**
