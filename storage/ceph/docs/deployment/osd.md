@@ -18,7 +18,7 @@ $ sudo ceph orch device ls [--hostname=...] [--wide] [--refresh]
 $ sudo ceph orch daemon add osd *<host>*:*<device-path>*
 ```
 - > ## remove osd
-Removing an OSD from a cluster involves two steps:
+removing an OSD from a cluster involves two steps:
 1. evacuating all placement groups (PGs) from the cluster
 2. removing the PG-free OSD from the cluster
 ```bash

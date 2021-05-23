@@ -23,7 +23,7 @@ $ sudo apt install docker.io
 ```
 - add your ssh public key to servers
 
-> 2. prepare 2 vms for rgw1 and mon2
+> 2. prepare 3 vms for mon1, mon2 and rgw1
 - deploy ubuntu 20.04 on vms
 - update & upgrade
 ```bash
