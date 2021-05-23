@@ -1,4 +1,7 @@
 # *** **check if works on octopus** ***
+>--------------------------------------------------------------------------
+> ## this dociumentation is for latest version and may not work on octopus
+> -------------------------------------------------------------------------
 # deploy iscsi gateway
 - you should make a yaml file like below
 ```bash

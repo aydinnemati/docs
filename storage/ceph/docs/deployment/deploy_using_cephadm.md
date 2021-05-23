@@ -2,7 +2,7 @@
 > cluster map
 - 2 monitors
 - 2 managers
-- 4 osd s up to 12
+- 4 osds up to 12
 - 1 rados gateway
 - 1 mds
 
@@ -11,7 +11,7 @@
 - _**we will use hostnames in commands**_
 - our vms are rgw1, mon1 and mon2
 and bare metals are sff-220(osd), sff-222(osd), lff-221(vms)
-> 1. deploy all bare metals with maas
+> 1. deploy all bare metals with [maas](https://maas.io/docs)
 - ubuntu 20.04
 - update & upgrade
 ```bash
@@ -92,6 +92,7 @@ $ sudo ceph orch device ls
 - The device must not contain a file system.
 - The device must not contain a Ceph BlueStore OSD.
 - The device must be larger than 5 GB.
+- for more information see [ceph.com](https://docs.ceph.com/en/octopus/cephadm/install/) [DEPLOY OSDS]
 ## taking out osd from cluster while its up
 - first you should take it down and wait for degraded objects to place in other osds then take it out by running:
 ```bash
@@ -102,7 +103,7 @@ $ sudo ceph osd *<osd-number>*
 $ sudo ceph -w
 ```
 
-> 14. for deploy osd s run this
+> 14. for deploy osds run this
 ```bash
 $ sudo ceph orch daemon add osd *<host>*:*<device-path>*
 ```
@@ -194,6 +195,10 @@ $ sudo ceph osd pool set <pool-name> min_size <value>
 ```
 > # **get a health check and it should be OK**
 > **congratulations!!!** 
+### expected output
+```bash
+HEALTH_OK
+```
 > you have a ceph cluster with:
 > - 2 monitors
 > - 2 managers
