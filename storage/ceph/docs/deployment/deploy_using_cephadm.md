@@ -92,6 +92,15 @@ $ sudo ceph orch device ls
 - The device must not contain a file system.
 - The device must not contain a Ceph BlueStore OSD.
 - The device must be larger than 5 GB.
+## taking out osd from cluster while its up
+- first you should take it down and wait for degraded objects to place in other osds then take it out by running:
+```bash
+$ sudo ceph osd *<osd-number>*
+```
+- and check stats by:
+```bash
+$ sudo ceph -w
+```
 
 > 14. for deploy osd s run this
 ```bash
@@ -101,8 +110,8 @@ in this case we run these
 ```bash
 $ sudo ceph orch daemon add osd sff-220:/dev/sda
 $ sudo ceph orch daemon add osd sff-220:/dev/sdb
-$ sudo ceph orch daemon add osd sff-222:/dev/
-$ sudo ceph orch daemon add osd sff-222:/dev/
+$ sudo ceph orch daemon add osd sff-222:/dev/sda
+$ sudo ceph orch daemon add osd sff-222:/dev/sdb
 ```
 
 ### check your cluster
@@ -193,5 +202,9 @@ $ sudo ceph osd pool set <pool-name> min_size <value>
 > - 4 osds
 > - monitoring with prometheus and node-exporter with grafana dashboard
 
+##  run docker cmd without sudo
+```bash
+$ sudo usermod -aG docker $USER
+```
 
-
+# **~~~ (( how use ceph ?! )) ~~~**
