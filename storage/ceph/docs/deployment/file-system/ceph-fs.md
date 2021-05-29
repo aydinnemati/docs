@@ -40,3 +40,14 @@ $ sudo systemctl start ceph-fuse@/mnt/mycephfs.service
 $ sudo systemctl enable ceph-fuse.target
 $ sudo systemctl enable ceph-fuse@-mnt-mycephfs.service
 ```
+
+# mount cephFS on server
+- for mounting ceph-fs on a server, should have a user with keyring on that server and run command below:
+```bash
+$ sudo ceph-fuse -n user -k /path/to/keyring/file  -m <mon-ip>:6789 /mount/point
+```
+## example
+```bash
+$ sudo ceph-fuse -n client.admin -k /etc/ceph/ceph.client.admin.keyring -m 192.168.xxx.xxx:6789 /data
+```
+## # **you can mount a fs volume on sevral servers** \#
