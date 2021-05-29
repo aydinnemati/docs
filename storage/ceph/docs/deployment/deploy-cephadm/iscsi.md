@@ -1,4 +1,6 @@
-# *** **check if works on octopus** ***
+> # * **you should create <iscsi_pool> first** *
+
+
 >--------------------------------------------------------------------------
 > ## this dociumentation is for latest version and may not work on octopus
 > -------------------------------------------------------------------------
@@ -54,4 +56,17 @@ spec:
     -----END PRIVATE KEY-----
 
 
+```
+```bash
+service_type: iscsi
+service_id: iscsi
+placement:
+  hosts:
+  - [...]
+spec:
+  pool: iscsi_pool
+  trusted_ip_list: "IP_ADDRESS_1,IP_ADDRESS_2,IP_ADDRESS_3,..."
+  api_user: API_USERNAME
+  api_password: API_PASSWORD
+  api_secure: false
 ```
