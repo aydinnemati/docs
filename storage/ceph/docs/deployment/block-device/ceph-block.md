@@ -120,3 +120,6 @@ $ sudo virsh qemu-monitor-command --hmp {vm-domain-name} 'info block'
 $ sudo virsh domblklist {vm-domain-name} --details
 ```
 if everything looks okay, you may begin using the Ceph block device within your VM
+
+# QEMU and Block Devices 
+See [ceph](https://docs.ceph.com/en/octopus/rbd/qemu-rbd/)

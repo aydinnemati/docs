@@ -52,3 +52,8 @@ $ sudo ceph orch osd rm stop 4
 ```bash
 Stopped OSD(s) removal
 ```
+# osd info
+```bash
+$ sudo ceph orch ps
+$ sudo ceph osd info
+```
