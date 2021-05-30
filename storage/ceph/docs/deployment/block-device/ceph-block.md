@@ -123,3 +123,7 @@ if everything looks okay, you may begin using the Ceph block device within your 
 
 # QEMU and Block Devices 
 See [ceph](https://docs.ceph.com/en/octopus/rbd/qemu-rbd/)
+
+# ISCSI
+[====>](https://docs.ceph.com/en/octopus/rbd/iscsi-monitoring/)
+> * In the Client column, (CON) means the iSCSI initiator (client) is currently logged into the iSCSI gateway. If -multi- is displayed, then multiple clients are mapped to the single RBD image. *
