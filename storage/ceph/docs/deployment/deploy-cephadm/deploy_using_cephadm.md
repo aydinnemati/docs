@@ -179,7 +179,7 @@ $ sudo ceph osd df
 # adding mds node
 ```bash
 $ sudo ceph orch apply mds *<fs-name>* --placement="*<num-daemons>* [*<host1>* ...]"
-$ sudo ceph orch apply mds **some name like test-fss** --placement=2 mon2
+$ sudo ceph orch apply mds **some name like test-fss** --placement="2 mon2"
 ```
 # adding rgw node
 ```bash
