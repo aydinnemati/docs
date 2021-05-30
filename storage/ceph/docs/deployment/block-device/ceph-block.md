@@ -22,8 +22,9 @@ $ sudo ceph auth get-or-create client.libvirt mon 'profile rbd' osd 'profile rbd
 ```bash
 $ sudo ceph auth ls
 ```
-6. Use QEMU to create an image in your RBD pool. The following example uses the image name new-libvirt-image and references libvirt-pool.
+6. install qemu-utils and use QEMU to create an image in your RBD pool. The following example uses the image name new-libvirt-image and references libvirt-pool.
 ```bash
+$ sudo apt-get install qemu-utils
 $ sudo qemu-img create -f rbd rbd:libvirt-pool(pool name)/new-libvirt-image(image name) 2G
 ```
 7. verify the image exists
