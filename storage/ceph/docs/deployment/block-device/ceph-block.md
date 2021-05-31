@@ -92,10 +92,10 @@ Then, add <auth></auth> element to the domain configuration file:
 <disk type="network" device="disk">
     <driver name="qemu" type="raw"/>
     <auth username="libvirt">
-      <secret type="ceph" uuid="32dd0032-6c76-4a3f-8b1a-7db47a02e119"/>
+        <secret type="ceph" uuid="32dd0032-6c76-4a3f-8b1a-7db47a02e119"/>
     </auth>
     <source protocol="rbd" name="block-pool/test-img">
-      <host name="192.168.88.246" port="6789"/>
+        <host name="192.168.88.246" port="6789"/>
     </source>
     <target dev="vda" bus="virtio"/>
     <address type="pci" domain="0x0000" bus="0x00" slot="0x08" function="0x0"/>
