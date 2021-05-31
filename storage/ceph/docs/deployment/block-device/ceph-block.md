@@ -75,7 +75,7 @@ $ sudo virsh secret-set-value --secret {uuid of secret} --base64 $(cat client.li
 ```
 15. you must also set the secret manually by adding the following <auth> entry to the <disk> element you entered earlier (replacing the uuid value with the result from the command line example above)
 ```bash
-$ sudo sudo virsh edit {vm-domain-name}
+$ sudo virsh edit {vm-domain-name}
 ```
 Then, add <auth></auth> element to the domain configuration file:
 
