@@ -7,7 +7,7 @@
 > - in Unix and Unix-like operating systems, a raw device is a special kind of logical device associated with a character device file that allows a storage device such as a hard disk drive to be accessed directly, bypassing the operating system's caches and buffers
 
 # *** **_Tips_** ***
-# **BlueStore**
+# 3) **BlueStore**
 1. A beneficial side
 effect of this is that, when using an SSD to hold the journal for a spinning disk, it acts like a
 write back cache, lowering the latency of writes to the speed of the SSD; however, if the
