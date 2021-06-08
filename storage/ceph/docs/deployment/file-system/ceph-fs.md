@@ -51,3 +51,10 @@ $ sudo ceph-fuse -n user -k /path/to/keyring/file  -m <mon-ip>:6789 /mount/point
 $ sudo ceph-fuse -n client.admin -k /etc/ceph/ceph.client.admin.keyring -m 192.168.xxx.xxx:6789 /data
 ```
 ## # **you can mount a fs volume on sevral servers** \#
+
+
+# If you are using BlueStore, the file structure of the OSD is no longer viewable by default. However, you can use the following command on a stopped OSD to mount the BlueStore OSD as a Linux filesystem.
+```bash
+$ sudo ceph-objectstore-tool --op fuse --data-path /var/lib/ceph/osd/ceph-0 --
+mountpoint /mnt
+```

@@ -73,3 +73,80 @@ use the lvm mode.
 
 11. It's recommended that you
 encrypt all new OSDs unless you have a specific reason not to
+
+# 3) **RADOS Pools and Client Access**
+1. Two types of pools can be created, replicated, and erasure-coded, offering
+different usable capacities, durability, and performance. Replicated RADOS pools are the default pool type in Ceph(replBy default, Ceph will use a replication factor of 3x)
+2. As mentioned, the default replication size is 3, with a required minimum size of two
+replicas to accept client I/O. Decreasing either of these values is not recommended, and
+increasing them will likely have minimal effects on increasing data durability, as the chance
+of losing three OSDs that all share the same PG is highly unlikely
+
+3. Ceph will prioritize
+the recovery of PGs that have the fewest copies, this further minimizes the risk of data loss,
+therefore, increasing the number of replica copies to four is only beneficial when it comes to
+improving data availability
+
+4. 4+2 configurations would give you 66% usable capacity and allows for two OSD failures.
+This is probably a good configuration for most people to use.
+5. At the other end of the scale, 18+2 would give you 90% usable capacity and still allow for
+two OSD failures. On the surface, this sounds like an ideal option, but the greater total
+number of shards comes at a cost. A greater number of total shards has a negative impact
+on performance and also an increased CPU demand. The same 4 MB object that would be
+stored as a whole single object in a replicated pool would now be split into 20 x 200-KB
+chunks, which have to be tracked and written to 20 different OSDs. Spinning disks will
+exhibit faster bandwidth, measured in MBps with larger I/O sizes, but bandwidth
+drastically tails off at smaller I/O sizes. These smaller shards will generate a large amount
+of small I/O and cause an additional load on some clusters.
+6. it's important not to forget that these shards need to be spread across different hosts
+according to the CRUSH map rules: no shard belonging to the same object can be stored on
+the same host as another shard from the same object. Some clusters may not have a
+sufficient number of hosts to satisfy this requirement. If a CRUSH rule cannot be satisfied,
+the PGs will not become active, and any I/O destined for these PGs will be halted, so it's
+important to understand the impact on a cluster's health of making CRUSH modifications.
+
+7. The default erasure plugin in Ceph is the jerasure plugin
+- different techniques that can be used to calculate the erasure codes:
+> - reed_sol_van : The default technique, complete flexibility on number of k+m
+shards, also the slowest.
+> - reed_sol_r6_op : Optimized version of default technique for use cases where
+m=2. Although it is much faster than the unoptimized version, it's not as fast as other versions. However, the number of k shards is flexible.
+> - cauchy_orig : Better than the default, but it's better to use cauchy_good
+> - cauchy_good : Middle-of-the-road performance while maintaining full flexibility of the shard configuration.
+> - liberation : Total number of shards must be equal to a prime number and m=2 so 3+2, 5+2, or 9+2 are all good candidates, excellent performance.
+> - liber8tion : Total number of shards must be equal to 8 and m=2, only 6+2 is possible, but excellent performance.
+> - blaum_roth : Total number of shards must be one less than a prime number and m=2, so the ideal is 4+2, excellent performance.
+
+8. 
+> K
+> - the number of data chunks, i.e. the number of chunks in which the original object is divided. For instance if K = 2 a 10KB object will be divided into K objects of 5KB each.
+
+> M
+> - the number of coding chunks, i.e. the number of additional chunks computed by the encoding functions. If there are 2 coding chunks, it means 2 OSDs can be out without losing data.
+
+9. **Although erasure-coded pool support has been in Ceph for several releases now, before the arrival of BlueStore in the Luminous release, it had not supported partial writes. This limitation meant that erasure pools could not directly be used with RBD and CephFS workloads. With the introduction of BlueStore in Luminous, it provided the groundwork for partial write support to be implemented. With partial write support, the number of I/O types that erasure pools can support almost matches replicated pools, enabling the use of erasure-coded pools directly with RBD and CephFS workloads. This dramatically lowers the cost of storage capacity for these use cases.**
+
+# 5) Ceph RADOS Pools and Client Access
+
+1. There is a fast read option that can be enabled on erasure pools, which allows
+the primary OSD to reconstruct the data from erasure shards if they return quicker than
+data shards. This can help to lower average latency at the cost of a slightly higher CPU
+usage.
+2. Algorithms and profiles: see every option to identify which technique best suits your workload. chapter 5 page 132 mastering ceph
+3. The MDS currently runs as a single-threaded
+process and so it is recommended that the MDS is run on hardware with the highest-
+clocked CPU as possible.
+4. in larger deployments, a single
+MDS could possibly start to become a limitation, especially due to the single-threaded
+limitation of MDSes. It should be noted that multiple active MDSes are purely for increased performance and do not provide any failover or high availability themselves; therefore, sufficient standby MDSes should always be provisioned
+5. The index pools helps with the listing of bucket contents and so placing
+the index pool on SSDs is highly recommended.
+6. RGW: only the data pool should be placed on erasure-coded pools.
+
+# 8) Monitoring Ceph
+1. If your Ceph cluster fills up, it
+will stop accepting I/O requests and will not be able to recover from future OSD failures.
+2. We will build this monitoring infrastructure on one of our monitor nodes in our test cluster.
+In a production cluster, it is highly recommended that it gets its own dedicated server.
+
+# Tuning Ceph
