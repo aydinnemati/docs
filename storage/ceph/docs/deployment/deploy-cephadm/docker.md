@@ -5,7 +5,7 @@ $ sudo service docker stop
 ```
 2. Add a configuration file to tell the docker daemon what is the location of the data directory
 ```bash
-$ sudo mkdir /etc/docker/daemon.json
+$ sudo vim /etc/docker/daemon.json
 ```
 ```bash
 { 
