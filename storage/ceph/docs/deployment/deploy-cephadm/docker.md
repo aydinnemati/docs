@@ -1,10 +1,3 @@
-# change docker storage location
-See [www.guguweb.com](https://www.guguweb.com/2019/02/07/how-to-move-docker-data-directory-to-another-location-on-ubuntu/)
-
-##  run docker cmd without sudo
-```bash
-$ sudo usermod -aG docker $USER
-```
 # How to move docker data directory to another location on Ubuntu
 1. Stop the docker daemon
 ```bash
@@ -30,3 +23,11 @@ $ sudo mv /var/lib/docker /var/lib/docker.old
 $ sudo service docker start
 ```
 6. Test
+
+# change docker storage location
+See [www.guguweb.com](https://www.guguweb.com/2019/02/07/how-to-move-docker-data-directory-to-another-location-on-ubuntu/)
+
+##  run docker cmd without sudo
+```bash
+$ sudo usermod -aG docker $USER
+```
