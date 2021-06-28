@@ -56,6 +56,7 @@ Stopped OSD(s) removal
 ```bash
 $ sudo ceph orch ps
 $ sudo ceph osd info
+$ sudo ceph osd df
 ```
 
 # to build pool on specific osds 
