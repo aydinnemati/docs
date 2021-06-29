@@ -1,4 +1,4 @@
-# add and remove monitors from your cluster
+# add and remove MDSs from your cluster
 - > ## adding host to ceph
 ```bash
 $ sudo ceph orch host add *<hostname>* *<ip>*

@@ -11,7 +11,7 @@ $ sudo ceph fs new <fs_name> <metadata> <data>
 $ sudo ceph fs volume create <fs name> # also it makes 2 pools for it too
 $ sudo ceph fs volume ls
 $ sudo ceph osd pool ls
-$ sudo ceph ceph osd pool create <pool name>
+$ sudo ceph osd pool create <pool name>
 $ sudo ceph mds stat
 ```
 > **let's mount it**
