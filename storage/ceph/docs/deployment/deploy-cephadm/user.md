@@ -5,7 +5,7 @@ $ sudo ceph auth ls
 ```
 - to retrieve a specific user, key and capabilities and save output to file
 ```bash
-$ sudo o retrieve a specific user, key and capabilities
+$ sudo ceph auth get {TYPE.ID}
 ```
 ```bash
 $ sudo ceph auth export {TYPE.ID}
