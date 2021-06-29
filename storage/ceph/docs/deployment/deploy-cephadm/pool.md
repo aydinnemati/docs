@@ -47,3 +47,7 @@ $ sudo ceph osd crush rule create-replicated replicated_hdd default host hdd
 ```bash
 $ sudo ceph osd pool set <pool-name> crush_rule <rule-name>
 ```
+# get pool crush rule
+```bash
+$ sudo ceph osd pool get {pool-name} crush_rule
+```
