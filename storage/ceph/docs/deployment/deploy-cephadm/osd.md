@@ -58,6 +58,7 @@ $ sudo ceph orch ps
 $ sudo ceph osd info
 $ sudo ceph osd df
 $ sudo ceph osd tree
+$ sudo ceph osd dump
 ```
 
 # to build pool on specific osds 
