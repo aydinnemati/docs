@@ -1,4 +1,8 @@
 # create pools
+```bash
+$ sudo ceph osd pool create {pool-name} [{pg-num} [{pgp-num}]] [replicated] [crush-rule-name] [expected-num-objects]
+$ sudo ceph osd pool create {pool-name} [{pg-num} [{pgp-num}]]   erasure [erasure-code-profile] [crush-rule-name] [expected_num_objects] [--autoscale-mode=<on,off,warn>]
+```
 See [computingforgeeks.com](https://computingforgeeks.com/create-a-pool-in-ceph-storage-cluster/)
 See [ceph.com](https://docs.ceph.com/en/latest/rados/operations/pools/)
 
