@@ -1,4 +1,4 @@
-# crashed daemons
+# crash info
 ```bash
 $ sudo ceph crash ls
 $ sudo ceph crash info <id>
