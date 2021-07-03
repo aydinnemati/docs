@@ -44,6 +44,10 @@ $ sudo ceph orch osd rm status
 ```bash
 $ sudo ceph orch osd rm stop <svc_id(s)>
 ```
+## after its done and ready for purge
+```bash
+$ sudo ceph ceph osd purge *<osd id number>* --yes-i-really-mean-it
+```
 ### example
 ```bash
 $ sudo ceph orch osd rm stop 4 
