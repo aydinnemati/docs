@@ -38,7 +38,7 @@ $ sudo ceph osd status
 ```
 ## and 
 ```bash
-$ sudo sudo ceph orch osd rm status
+$ sudo ceph orch osd rm status
 ```
 # *** stop OSD removal ***
 ```bash
