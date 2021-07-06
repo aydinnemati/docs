@@ -23,3 +23,12 @@ $ sudo [{ipaddress}:{port}]:/ {mount}/{mountpoint} ceph [name=username,secret=se
 ```
 ## for more info see 
 - [ceph.com](https://docs.ceph.com/en/octopus/cephfs/mount-using-kernel-driver/)
+
+
+# mount ceph fs using kernel drivers [EXAMPLE]
+```bash
+$ sudo mount -t ceph 10.0.23.4:6789,10.0.23.6:6789:/ /data-ceph/  -o name=admin,secret=AQCl5uNgtTw4FBAA/NHD5ykDm77Ugz5lBa7jTQ==
+```
+```bash
+$ sudo mount -t ceph 10.0.23.4:6789,10.0.23.6:6789:/test/path/to/mount /data-ceph/  -o name=*<client>*,secret=*<client_secret>* # mountes /test/path/to/mount OF CEPH FS TO /data-ceph ON DESTINATION
+```

@@ -4,3 +4,6 @@
 
 > ## down time
 > - 2. disks that replaced shuold re-build raid or re-enabled with intelgent provisioning tool of hpe
+
+## DNS
+- 3. 10.0.23.200 10-0-23-0--24.maas-internal cant resolve

@@ -45,7 +45,7 @@ $ sudo ./cephadm install
 ```
 > 4. create ceph directory in /etc
 ```bash
-$ sudo mkdir -p /etc/ceph
+$ sudo mkdir /etc/ceph
 ```
 > 5. create first monitor and manager on localhost
 ```bash
