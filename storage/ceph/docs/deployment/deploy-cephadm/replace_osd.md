@@ -1,3 +1,11 @@
+# Handling a disk failure
+- install ceph-osd
+```bash
+$ sudo apt install ceph-osd
+```
+## **replaced OSD’s id and CRUSH map entry need to be keep intact after the OSD is destroyed for replacement**
+- See [redhat](https://access.redhat.com/documentation/en-us/red_hat_ceph_storage/3/html/operations_guide/handling-a-disk-failure)
+
 # Replacing OSD
 - 1. make sure it is safe to destroy the OSD
 ```bash
