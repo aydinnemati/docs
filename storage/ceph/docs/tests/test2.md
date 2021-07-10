@@ -64,3 +64,36 @@ sudo ceph -s
       [............................] 
 ```
 ## start 9:20 until 15:30 > 215 GB data on OSD
+
+# **16:35**
+```
+sudo ceph -s
+  cluster:
+    id:     15aff95a-de16-11eb-8213-cd7155651051
+    health: HEALTH_WARN
+            Degraded data redundancy: 125068/2990120 objects degraded (4.183%), 11 pgs degraded, 11 pgs undersized
+ 
+  services:
+    mon: 1 daemons, quorum lff-204 (age 27h)
+    mgr: lff-204.urbjnn(active, since 27h), standbys: lff-206.nsvakx
+    mds: fs-01:1 {0=fs-01.lff-206.npyqfo=up:active}
+    osd: 8 osds: 8 up (since 6h), 8 in (since 6h); 28 remapped pgs
+ 
+  data:
+    pools:   3 pools, 161 pgs
+    objects: 1.50M objects, 1.9 TiB
+    usage:   3.7 TiB used, 2.8 TiB / 6.5 TiB avail
+    pgs:     125068/2990120 objects degraded (4.183%)
+             127967/2990120 objects misplaced (4.280%)
+             133 active+clean
+             17  active+remapped+backfill_wait
+             10  active+undersized+degraded+remapped+backfill_wait
+             1   active+undersized+degraded+remapped+backfilling
+ 
+  io:
+    recovery: 8.6 MiB/s, 6 objects/s
+ 
+  progress:
+    Rebalancing after osd.5 marked in (6h)
+      [............................] 
+```
