@@ -7,3 +7,6 @@
 
 ## DNS
 - 3. 10.0.23.200 10-0-23-0--24.maas-internal cant resolve
+
+## fiber cables
+- cant PXE boot on it
