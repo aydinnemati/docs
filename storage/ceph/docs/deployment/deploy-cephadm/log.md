@@ -43,3 +43,13 @@ $ sudo ceph tell osd.0 config set debug_osd 0/5
         debug mds = 1
         debug mds balancer = 1
 ```
+
+# Ceph logging
+```bash
+$ sudo ceph tell osd.0 injectargs --debug-osd 0/5
+```
+- Then, set the logging level for the OSD log on osd.0 to 0/5 . The number 0 is the disk
+logging level, and the number 5 is the in-memory logging level
+- At a logging level of 20 , the logs are extremely verbose and will grow
+quickly. Do not keep high-verbosity logging enabled for too long. Higher
+logging levels will also have an impact on performance.

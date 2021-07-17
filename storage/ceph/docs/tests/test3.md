@@ -41,13 +41,6 @@ for x in range(dir_create_numbers):
 .
 .
 4999991
-4999992
-4999993
-4999994
-4999995
-4999996
-4999997
-4999998
 4999999
 
 real	1139m20.146s
@@ -95,10 +88,6 @@ for x in range(dir_create_numbers):
 .
 .
 .
-4999994
-4999995
-4999996
-4999997
 4999998
 4999999
 
@@ -142,18 +131,54 @@ $
 ## on ceph
 > ## command
 ```bash
-$ time sudo grep -ir "tehran" . | wc -l
+$ time sudo grep -ir "tehran" .
 ```
 > ## resault
 ```
-
+more than one day !!!
 ```
-## my laptop
+## on my laptop
 > ## command
 ```bash
-$ time sudo grep -ir "tehran" . | wc -l
+$ time sudo grep -ir "tehran" .
 ```
 > ## resault
 ```
+.
+.
+.
+./b67/f12/a3e/135/f91/63d/096/a29/c86/d8c/file.txt:Tehran
+./b67/d8e/e8d/718/dc6/488/d24/287/ca1/9a9/file.txt:Tehran
 
+real	56m24.851s
+user	3m13.098s
+sys	11m3.457s
+```
+# find
+## on ceph
+> ## commands
+```bash
+$ sudo touch --date "2010-01-05" ./*
+$ time sudo find . -mtime +10 -iname "ab*"
+```
+> ## resault
+```
+```
+## on my laptop
+> ## commands
+```bash
+$ sudo touch --date "2010-01-05" ./*
+$ time sudo find . -mtime +10 -iname "ab*"
+```
+> ## resault
+```
+.
+.
+.
+./abb
+./ab3
+
+real	40m49.616s
+user	3m7.226s
+sys	7m20.302s
 ```
