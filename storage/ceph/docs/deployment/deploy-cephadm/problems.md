@@ -10,3 +10,9 @@
 
 ## fiber cables
 - cant PXE boot on it
+
+## ceph GPG key for updating
+```
+Err:5 https://download.ceph.com/debian-octopus focal InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY E84AC2C0460F3994
+```
