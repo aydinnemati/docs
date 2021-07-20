@@ -16,3 +16,7 @@
 Err:5 https://download.ceph.com/debian-octopus focal InRelease
   The following signatures couldn't be verified because the public key is not available: NO_PUBKEY E84AC2C0460F3994
 ```
+## when maas is off
+```
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/focal-security/InRelease  Unable to connect to 10-0-23-0--24.maas-internal:8000:
+```
