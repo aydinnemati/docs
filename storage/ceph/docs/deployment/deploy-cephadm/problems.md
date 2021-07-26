@@ -20,3 +20,6 @@ Err:5 https://download.ceph.com/debian-octopus focal InRelease
 ```
 W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/focal-security/InRelease  Unable to connect to 10-0-23-0--24.maas-internal:8000:
 ```
+
+## witch osd disk is in witch bay???
+- we dont know witch disk of osd is witch actual disk in server!!!
