@@ -1,3 +1,6 @@
+# replace osd disk 
+see [redhat](https://access.redhat.com/documentation/en-us/red_hat_ceph_storage/2/html/administration_guide/changing_an_osd_drive)
+- The general procedure for replacing an OSD involves removing the OSD from your Ceph cluster, replacing the drive and then re-creating the OSD
 # Handling a disk failure
 - install ceph-osd
 ```bash
