@@ -93,3 +93,6 @@ placement:
   host_pattern: "*"
 ```
 > ## **To disable the automatic management of dameons, set ```unmanaged=True```**
+
+# config files in YAML and examples
+go to [service_specification_YAML](../service_specification_YAML/)
