@@ -111,5 +111,5 @@ $ sudo ceph osd pool set <pool-name> crush_rule <rule-name>
 ```bash
 $ sudo ceph orch apply -i spec.yml
 ```
->## #####------------------------------**Service Specification**------------------------------##### 
+>## #####--------------------------------------**Service Specification**--------------------------------------##### 
 > - go to [Service Specification](./service_specification.md) page for more info.
