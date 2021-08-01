@@ -84,7 +84,7 @@ $ sudo ceph orch host add addr *<mon1-ip>*
 it could take a few minutes be patient
 then do this to see available disks to deploy osd on
 ```bash
-$ sudo ceph orch device ls
+$ sudo ceph orch device ls [--hostname=...] [--wide] [--refresh]
 ```
 - The device must have no partitions.
 - The device must not have any LVM state.
