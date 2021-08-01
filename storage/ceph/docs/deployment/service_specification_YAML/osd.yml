@@ -10,6 +10,6 @@ data_devices:
     - /dev/sdc
     - /dev/sdd
     - /dev/sde
-    - /dev/sdf
+    # - /dev/sdf
 unmanaged: true
 encrypted: false
