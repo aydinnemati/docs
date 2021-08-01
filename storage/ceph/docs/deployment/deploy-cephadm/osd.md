@@ -105,3 +105,11 @@ $ sudo ceph osd crush rule create-replicated replicated_hdd default host hdd
 ```bash
 $ sudo ceph osd pool set <pool-name> crush_rule <rule-name>
 ```
+
+# deploy OSDs with Advanced OSD Service Specifications
+- to categorize device(s) based on their properties. This might be useful in forming a clearer picture of which devices are available to consume. Properties include device type (SSD or HDD), device model names, size, and the hosts on which the devices exist
+```bash
+$ sudo ceph orch apply -i spec.yml
+```
+>## #####------------------------------**Service Specification**------------------------------##### 
+> - go to [Service Specification](./service_specification.md) page for more info.
