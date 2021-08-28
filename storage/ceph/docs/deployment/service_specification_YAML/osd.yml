@@ -11,5 +11,5 @@ data_devices:
     - /dev/sdd
     - /dev/sde
     # - /dev/sdf
-unmanaged: true
+unmanaged: false
 encrypted: false
