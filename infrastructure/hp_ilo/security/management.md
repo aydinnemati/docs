@@ -1,0 +1,1 @@
+1. enable physical login on server 

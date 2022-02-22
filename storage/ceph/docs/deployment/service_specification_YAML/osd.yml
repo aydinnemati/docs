@@ -1,0 +1,15 @@
+service_type: osd
+service_id: osd_using_paths
+placement:
+  hosts:
+    - sff-203
+    - sff-205
+data_devices:
+  paths:
+    - /dev/sdb
+    - /dev/sdc
+    - /dev/sdd
+    - /dev/sde
+    # - /dev/sdf
+unmanaged: false
+encrypted: false
