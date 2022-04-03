@@ -12,6 +12,7 @@ network:
                 - 8.8.8.8
         eno2:
             dhcp4: false
+            mtu: 9000
             addresses:
             - 10.0.22.111/24
             nameservers:
